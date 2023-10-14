@@ -1,0 +1,25 @@
+{
+	"cSpell.words": [
+		"bindgen",
+		"chrono",
+		"Combobox",
+		"cose",
+		"ctap",
+		"fidokey",
+		"gloo",
+		"Hasher",
+		"listbox",
+		"openapi",
+		"reqwasm",
+		"Rustls",
+		"webauthn",
+		"YUBIKEY"
+	],
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"git.enableCommitSigning": true,
+	"rust-analyzer.linkedProjects": [
+		"./Cargo.toml",
+		"./demo/Cargo.toml"
+	]
+}
