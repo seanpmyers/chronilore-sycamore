@@ -7,3 +7,25 @@ edition = "2021"
 
 [dependencies]
 sycamore = { versin = "0.8.2" }
+web-sys = { version = "0.3", features = [
+	"AttestationConveyancePreference",
+	"AuthenticatorSelectionCriteria",
+	"AuthenticatorAttachment",
+	"CredentialsContainer",
+	"CredentialCreationOptions",
+	"Document",
+	"Element",
+	"Event",
+	"EventTarget",
+	"HtmlDialogElement",
+	"HtmlDocument",
+	"Navigator",
+	"PublicKeyCredentialCreationOptions",
+	"PublicKeyCredentialParameters",
+	"PublicKeyCredentialType",
+	"PublicKeyCredentialRpEntity",
+	"PublicKeyCredentialUserEntity",
+	"Storage",
+	"UserVerificationRequirement",
+	"Window",
+] }

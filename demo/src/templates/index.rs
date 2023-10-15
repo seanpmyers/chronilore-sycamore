@@ -1,3 +1,4 @@
+use chronilore_sycamore::ThemeToggle;
 use perseus::prelude::*;
 use sycamore::prelude::*;
 
@@ -11,6 +12,7 @@ fn index_page<G: Html>(cx: Scope) -> View<G> {
                 code { "src/templates/index.rs" }
                 " and you'll be able to see the results here!"
             }
+            ThemeToggle()
         }
     }
 }

@@ -7,8 +7,10 @@ edition = "2021"
 
 # Dependencies for the engine and the browser go here
 [dependencies]
+chronilore-sycamore = { path = "../chronilore-sycamore" }
+
 perseus = { version = "0.4.2", features = ["hydrate"] }
-sycamore = "0.8.2"
+sycamore = { version = "0.8.2" }
 serde = { version = "1", features = ["derive"] }
 serde_json = { version = "1" }
 
