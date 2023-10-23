@@ -1,50 +1,119 @@
-/* This removes the margins inserted by default around pages */
+:root {
+	--background: #2a2a2e;
+	--background-canvas: #42414d;
+	--on-canvas: rgba(0, 0, 0, 0.3);
+	--background-hover: rgba(255, 255, 255, 0.32);
+	--background-active: rgba(0, 0, 0, 0.3);
+	--border-color: transparent;
+	--border-radius: 6px;
+	--medium-text: 18px;
+	--small-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	--text-color: white;
+	--dimmed-text-color: #a3a3a3;
+
+	--blue: #1a75ed;
+	--light-text: white;
+
+	--border-color-hover: transparent;
+	--second-border-color: transparent;
+	--default-text-color: white;
+	--secondary-text-color: rgba(255, 255, 255, 0.5);
+	--default-font-family: 'Fira Sans', sans-serif;
+	--default-border-radius: 8px;
+	color-scheme: dark;
+}
+
+.light {
+	--background: #ffffff;
+	--background-canvas: #fbfbfb;
+	--on-canvas: rgba(0, 0, 0, 0.3);
+	--background-hover: rgba(255, 255, 255, 0.32);
+	--background-active: rgba(0, 0, 0, 0.3);
+	--border-color: transparent;
+	--border-radius: 6px;
+	--medium-text: 18px;
+	--small-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	--text-color: black;
+	--dimmed-text-color: #535353;
+
+	--blue: #1a75ed;
+	--light-text: white;
+
+	--border-color-hover: transparent;
+	--default-text-color: black;
+	--secondary-text-color: rgba(255, 255, 255, 0.5);
+	--default-font-family: 'Fira Sans', sans-serif;
+	--default-border-radius: 8px;
+	color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		/* --primary-background-color: white; */
+		--default-text-color: black;
+	}
+}
+
 * {
 	margin: 0;
 }
 
-/* This makes all the elements that wrap our code take up the whole page, so that we can put things at the bottom.
-* Without this, the footer would be just beneath the content if the content doesn't fill the whole page (try disabling this).
-*/
-html,
-body,
-#root {
+html {
+	margin: 0;
+	padding: 0;
+	font-family: var(--default-font-family);
+	background: var(--background);
+	color: var(--default-text-color);
+	height: 100%;
+	font-weight: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Fira Sans', sans-serif;
+
+	background: var(--background);
+
+	transition: 0.6s linear;
 	height: 100%;
 }
 
-/* This makes the `<div>` that wraps our whole app use CSS Grid to display three sections: the header, content, and footer. */
-#root {
+body:first-child {
+	margin: 0;
+	padding: 0;
+}
+
+#root,
+.__perseus_content {
+	height: 100%;
+}
+
+.container {
+	height: 100%;
 	display: grid;
-	grid-template-columns: 1fr;
-	/* The header will be automatically sized, the footer will be as small as possible, and the content will take up the rest of the space in the middle */
-	grid-template-rows: auto 1fr min-content;
-	grid-template-areas:
-		'header'
-		'main'
-		'footer';
+	grid-template-areas: 'header header' 'nav content';
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 10vw 1fr;
 }
 
-header {
-	/* Put this in the right place in the grid */
+.top-nav {
 	grid-area: header;
-	/* Make this float over the content so it persists as we scroll */
-	position: fixed;
-	top: 0;
-	z-index: 99;
-	/* Make this span the whole page */
-	width: 100%;
+	height: 12vh;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
 }
 
-main {
-	/* Put this in the right place in the grid */
-	grid-area: main;
-	/* The header is positioned 'floating' over the content, so we have to make sure this doesn't go behind the header, or it would be invisible.
-	 * You may need to adjust this based on screen size, depending on how the header expands.
-	*/
-	margin-top: 5rem;
-}
+#main {
+	grid-area: content;
+	padding: 1rem;
+	max-height: 90vh;
 
-footer {
-	/* Put this in the right place in the grid */
-	grid-area: footer;
+	overflow: scroll;
+
+	border-radius: 45.902px 0 0 0px;
+	background: var(--background-canvas);
+	box-shadow: 0px 0.32970792055130005px 7.912988662719727px -0.32970792055130005px rgba(0, 0, 0, 0.18), 0px 0.7417190074920654px 2.2251572608947754px 0px rgba(255, 255, 255, 0.25) inset;
+	backdrop-filter: blur(32.25739669799805px);
 }
