@@ -1,4 +1,5 @@
 [workspace]
-members = ["demo", "chronilore-sycamore"]
-default-members = ["demo", "chronilore-sycamore"]
+members = ["chronilore-sycamore"]
+default-members = ["chronilore-sycamore"]
+exclude = ["demo"]
 resolver = "2"
