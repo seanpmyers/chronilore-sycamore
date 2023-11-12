@@ -3,8 +3,8 @@ use sycamore::prelude::*;
 const NAV_CLASSES: &str = "side-nav";
 const NAV_UL_CLASSES: &str = "side-nav-container";
 const NAV_LI_CLASSES: &str = "side-nav-item";
-const A_CLASS: &str = "big-nav-button side-nav-link";
-const NAV_BUTTON_ICON_CLASS: &str = "big-nav-button-icon";
+const A_CLASS: &str = "";
+const NAV_BUTTON_ICON_CLASS: &str = "";
 const NAV_BUTTON_TEXT_CLASS: &str = "big-nav-button-text";
 
 #[component]

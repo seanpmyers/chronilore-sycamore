@@ -19,7 +19,7 @@ pub fn Container<'a, G: Html>(
         div(class=" container") {
             TopNavBar()
             SideNavBar()
-            div(class="", id="main", data-title=title) {
+            div(class="glass", id="main", data-title=title) {
                 (children)
             }
         }
