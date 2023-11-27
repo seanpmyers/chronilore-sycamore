@@ -25,5 +25,7 @@
 		"./Cargo.toml",
 		"./demo/Cargo.toml",
 		"./chronilore-sycamore/Cargo.toml",
+		"./demo-pure/Cargo.toml",
+		"./sycamore9/Cargo.toml",
 	]
 }

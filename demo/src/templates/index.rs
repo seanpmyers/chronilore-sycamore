@@ -1,22 +1,25 @@
 use perseus::prelude::*;
 use sycamore::prelude::*;
+use sycamore::suspense::Suspense;
 
 use crate::components::container::Container;
+use chronilore_sycamore::components::timer::Timer;
 
-fn index_page<G: Html>(cx: Scope) -> View<G> {
-    view! { cx,
+fn index_page<G: Html>(context: Scope) -> View<G> {
+    view! { context,
         Container(title="Chronilore-Sycamore") {
             // Don't worry, there are much better ways of styling in Perseus!
             div(class="") {
                 h1 { "Demo" }
+                Timer(stopwatch=String::new()).delayed_widget()
             }
         }
     }
 }
 
 #[engine_only_fn]
-fn head(cx: Scope) -> View<SsrNode> {
-    view! { cx,
+fn head(context: Scope) -> View<SsrNode> {
+    view! { context,
         title { "Demo" }
     }
 }
