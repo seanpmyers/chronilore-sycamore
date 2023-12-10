@@ -9,6 +9,7 @@ const ZERO_SECONDS: f64 = 0_f64;
 
 #[derive(Props)]
 pub struct TimerProperties {
+    pub hide_display: Signal<bool>,
     pub reset: Signal<bool>,
     pub paused: Signal<bool>,
     pub elapsed: Signal<f64>,
@@ -17,6 +18,7 @@ pub struct TimerProperties {
 #[component]
 pub async fn Timer<G: Html>(
     TimerProperties {
+        hide_display,
         reset,
         paused,
         elapsed,
@@ -70,7 +72,12 @@ pub async fn Timer<G: Html>(
     }
 
     view! {
-        div() { "Timer" }
-        div() { (stopwatch.get_clone()) }
+        (match hide_display.get() {
+            true => view! {},
+            false => view!{
+                div() { "Timer" }
+                div() { (stopwatch.get_clone()) }
+            },
+        })
     }
 }
