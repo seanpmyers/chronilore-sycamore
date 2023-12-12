@@ -2,6 +2,7 @@ use sycamore::{prelude::*, suspense::Suspense};
 use web_sys::MouseEvent;
 
 use crate::components::{
+    container::Container,
     icon::{MOON_SVG_HTML, SUN_SVG_HTML},
     theme_toggle::ThemeToggle,
     timer::Timer,
@@ -23,17 +24,19 @@ fn App<G: Html>() -> View<G> {
     let toggle_hide_display = move |_: MouseEvent| hide_display.set(!hide_display.get());
 
     view! {
-        div {
-            "Component demo"
+        Container(title="") {
+            div {
+                "Component demo"
 
-            button(on:click=increment) { "+" }
-            span() {(state.get())}
-            ThemeToggle(text="", light_icon=SUN_SVG_HTML, dark_icon=MOON_SVG_HTML)
-            button(on:click=toggle_pause) { "Start/Stop" }
-            button(on:click=toggle_reset) { "Reset" }
-            button(on:click=toggle_hide_display) { "Hide/Show" }
-            Suspense(fallback=view!{ "Loading..." }) {
-                Timer(hide_display=hide_display, reset=reset, paused=paused, elapsed=elapsed)
+                button(on:click=increment) { "+" }
+                span() {(state.get())}
+                ThemeToggle(text="", light_icon=SUN_SVG_HTML, dark_icon=MOON_SVG_HTML)
+                button(on:click=toggle_pause) { "Start/Stop" }
+                button(on:click=toggle_reset) { "Reset" }
+                button(on:click=toggle_hide_display) { "Hide/Show" }
+                Suspense(fallback=view!{ "Loading..." }) {
+                    Timer(hide_display=hide_display, reset=reset, paused=paused, elapsed=elapsed)
+                }
             }
         }
     }
