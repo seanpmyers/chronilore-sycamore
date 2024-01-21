@@ -1,0 +1,49 @@
+[package]
+name = "leptos-demo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+leptos = { version = "^0", features = ["csr"] }
+futures-util = { version = "^0" }
+gloo-events = { version = "^0" }
+gloo-timers = { version = "^0", features = ["futures"] }
+js-sys = { version = "^0" }
+time = { version = "^0", features = [
+	"macros",
+	"serde",
+	"std",
+	"local-offset",
+	"wasm-bindgen",
+	"parsing",
+	"formatting",
+] }
+uuid = { version = "^1", features = ["serde", "v4", "js"] }
+wasm-bindgen = { version = "^0" }
+wasm-bindgen-futures = { version = "^0" }
+web-sys = { version = "^0", features = [
+	"AttestationConveyancePreference",
+	"AuthenticatorSelectionCriteria",
+	"AuthenticatorAttachment",
+	"CredentialsContainer",
+	"CredentialCreationOptions",
+	"Document",
+	"Element",
+	"Event",
+	"EventTarget",
+	"HtmlDialogElement",
+	"HtmlDocument",
+	"KeyboardEvent",
+	"MouseEvent",
+	"Navigator",
+	"PublicKeyCredentialCreationOptions",
+	"PublicKeyCredentialParameters",
+	"PublicKeyCredentialType",
+	"PublicKeyCredentialRpEntity",
+	"PublicKeyCredentialUserEntity",
+	"Storage",
+	"UserVerificationRequirement",
+	"Window",
+] }

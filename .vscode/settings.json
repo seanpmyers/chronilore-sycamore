@@ -9,6 +9,7 @@
 		"fidokey",
 		"gloo",
 		"Hasher",
+		"leptos",
 		"listbox",
 		"openapi",
 		"polyline",
@@ -25,7 +26,8 @@
 		"./Cargo.toml",
 		"./demo/Cargo.toml",
 		"./chronilore-sycamore/Cargo.toml",
-		"./demo-pure/Cargo.toml",
+		"./static-file-web-server/Cargo.toml",
 		"./sycamore9/Cargo.toml",
+		"./leptos-demo/Cargo.toml",
 	]
 }

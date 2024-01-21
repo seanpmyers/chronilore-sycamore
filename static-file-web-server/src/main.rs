@@ -6,12 +6,13 @@ use axum::{
 };
 use tower_http::services::fs::ServeDir;
 
-const FRONTEND_DIST_PATH: &str = "../sycamore9/dist";
+const SYCAMORE9_DIST_PATH: &str = "../sycamore9/dist";
+const LEPTOS_DIST_PATH: &str = "../leptos-demo/dist";
 
 #[tokio::main]
 async fn main() {
     println!("Hello, world!");
-    let directory_service: ServeDir = ServeDir::new(FRONTEND_DIST_PATH);
+    let directory_service: ServeDir = ServeDir::new(LEPTOS_DIST_PATH);
     let front_end_directory_router: MethodRouter = get_service(directory_service);
 
     let application_router: Router = Router::new().fallback_service(front_end_directory_router);

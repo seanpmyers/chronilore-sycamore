@@ -1,5 +1,5 @@
 [workspace]
 members = ["chronilore-sycamore"]
 default-members = ["chronilore-sycamore"]
-exclude = ["demo", "demo-pure", "sycamore9"]
+exclude = ["demo", "static-file-web-server", "sycamore9", "leptos-demo"]
 resolver = "2"
